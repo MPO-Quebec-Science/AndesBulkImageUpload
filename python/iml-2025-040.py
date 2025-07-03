@@ -4,7 +4,7 @@ from andes_set_image_poster import AndesSetImagePoster
 
 
 # Mission Spécial Buccin (Bic Sainte-Flavie) 2025
-
+#
 
 SERVER_URL = "http://iml-science-4.ent.dfo-mpo.ca:25040"
 
@@ -12,9 +12,9 @@ IMAGE_PATH = '\\\\stockage-buccin.ent.dfo-mpo.ca/stockage/IML-2025-040/photos_an
 
 asip = AndesSetImagePoster(url=SERVER_URL)
 asip.set_headers(
-    csrftoken='blablabla',
-    sessionid='blablabla',
-    csrfmiddlewaretoken='blablabla'
+    csrftoken='XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+    sessionid='XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+    csrfmiddlewaretoken='XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
     )
 # asip.post_image(525, IMAGE_PATH+'/IMG_0647_IML-2025-040_001.jpg')
 # exit()
