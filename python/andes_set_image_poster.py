@@ -49,11 +49,11 @@ class AndesSetImagePoster:
         set_id: int - the ID of the set to which the image belongs.
         fname: str - the path to the image file to be posted.
         """
-        logging.getLogger(__name__).info("POST %s with set %s file %s",self.url+api_path, set_id, fname)
-
         api_path = '/api/images/'
+
         if not self._is_ready():
             return 
+        logging.getLogger(__name__).info("Ready to POST %s with set %s file %s",self.url+api_path, set_id, fname)
 
         with open(fname, 'rb') as fp:
             form_data = {'sample': set_id,
