@@ -19,7 +19,7 @@ asip.set_headers(
 # asip.post_image(525, IMAGE_PATH+'/IMG_0647_IML-2025-040_001.jpg')
 # exit()
 
-# provides a map between set id and set number
+# the set export csv from ANDES provides a map between set id and set number
 sets = pd.read_csv('IML2025040_set_export.csv', encoding='windows-1252')
 
 for file in sorted(glob.glob(f'{IMAGE_PATH}/*.jpg')):
@@ -27,10 +27,10 @@ for file in sorted(glob.glob(f'{IMAGE_PATH}/*.jpg')):
     filename = file.split('\\')[-1]
     filename = filename.split('.')[0]
 
+    # parse set_number from the filename
     set_num = int(filename.split('_')[3])
+    # map to set_id from the CSV
     set_id = sets['set_id'][sets['set_number']==set_num].values[0]
-    # setNumber_181__IML-2024-058_181_2002.jpg
-    # print(f"setNumber_{set_num:03d}__{filename},")
     # print(file, set_num, set_id)
 
     asip.post_image(set_id, file)
